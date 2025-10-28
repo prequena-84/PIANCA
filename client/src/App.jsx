@@ -1,12 +1,34 @@
-//import { useState } from 'react';
+// Importación de React y el Estado
+import React, { useState } from 'react';
 
-// Importacion de Css
+// Importación Componente Login 
+import Login from './components/login/form.login';
+
+// Importacion de Css componente App.
 import './App.css';
 
 function App() {
+  // Estado de los datos de login
+  const [ dataLogin, setDataLogin ] = useState({
+    email:"",
+    password:"",
+  });
+
+  const handlerChange = ( event ) => {
+    const { name, value } = event.target;
+
+    setDataLogin( prevData => ({
+      ...prevData,
+      [name]:value,
+    }));
+  };
+
   return (
     <>
-      <h1>Login</h1>
+      <Login
+        dataLogin={dataLogin}
+        handleChange={handlerChange}
+      />
     </>
   );
 };
