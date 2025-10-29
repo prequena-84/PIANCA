@@ -1,0 +1,66 @@
+.container {
+    width: 100%;
+    height: 55%;
+}
+
+.containerNav {
+    width: 100%;
+    height: auto;
+}
+
+.containerTitle {
+    width: 100%;
+    height: auto;
+    background: var( --color-heroPanel );
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    background: var( --color-formCostumer );
+}
+
+.fieldset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    gap: .60rem;
+}
+
+.containerInput {
+    width: 30vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .30rem;
+}
+
+.containerBtn {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.footer {
+    width: 100%;
+    height: 71%;
+    background: var( --color-footer ) ;
+}
+
+.containerImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 9vw;
+    height: auto;
+    /*margin-left: 2.5rem;*/
+}

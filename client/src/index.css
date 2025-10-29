@@ -2,8 +2,10 @@
 
 /* Variable de CSS */
 :root {
-    --color-heroPanel: #eff6e0 ;
+    --color-heroPanel: #eff6e0;
     --color-login: #283618;
+    --color-formCostumer: #f6fff8;
+    --color-footer: #01110a;
 }
 
 #root {

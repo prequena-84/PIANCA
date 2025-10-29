@@ -24,8 +24,19 @@ function App() {
   // Estado Reactivo del Login
   const [ isLogin, setIsLogin ] = useState(false);
 
+  // Estado de los Datos del Cliente
+  const [ dataCostumer, setDataCostumer ] = useState({
+    //typeDocument:"",
+    document:null,
+    name:"",
+    lastName:"",
+    phone:"",
+    address:"",
+    email:"",
+  })
+
   // Funcion para leer los cambios del input
-  const handlerChange = ( event ) => {
+  const handlerChangeLogin = ( event ) => {
     const { name, value } = event.target;
 
     setDataLogin( prevData => ({
@@ -35,7 +46,7 @@ function App() {
   };
 
   // Función para limpiar el formulario de login
-  const clearForm = () => {
+  const clearFormLogin = () => {
     setDataLogin({
       email:"",
       password:"",
@@ -64,6 +75,38 @@ function App() {
     };
   };
 
+    // Funcion para leer los cambios del input del costumer
+  const handlerChangeFormCostumer = ( event ) => {
+    const { name, value } = event.target;
+
+    setDataCostumer( prevData => ({
+      ...prevData,
+      [name]:value,
+    }));
+  };
+
+  // Función para limpiar el formulario de Costumer
+  const clearFormCostumer = () => {
+    setDataCostumer({
+      //typeDocument:"",
+      document:"",
+      name:"",
+      lastName:"",
+      phone:"",
+      address:"",
+      email:"",
+    });
+  };
+
+  // Funcion del onSumit Costumer
+  const sendDataCostumer = event => {
+    // Con este elemento evitamos que el navegador recargue la pagina
+    event.preventDefault();
+
+    clearFormCostumer();
+    alert('Se ha registrado el cliente sastifactoriamente');
+  };
+
   // Renderizado del jsx despues de cambios
   return (
     <div className={style.container}>
@@ -72,15 +115,18 @@ function App() {
           <div className={style.containerLogin}>
             <Login
               dataLogin={dataLogin}        // Estado reactivo de los datos del login que se pasan al componente hijo -> Login
-              handleChange={handlerChange}
-              onClear={clearForm}
+              handleChange={handlerChangeLogin}
+              onClear={clearFormLogin}
               onSubmit={sendDataLogin}
             />
           </div>
       </div>}
-      {isLogin && <div>
-        <FormCostumer />
-      </div>}
+      {isLogin && <FormCostumer
+        dataFormCostumer={dataCostumer} 
+        onClear={clearFormCostumer}
+        onSubmit={sendDataCostumer}
+        handlerChange={handlerChangeFormCostumer}
+      />}
     </div>
   );
 };
