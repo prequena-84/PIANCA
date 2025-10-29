@@ -1,0 +1,42 @@
+.containerForm {
+    width: 100%;
+    height: 100%;   
+    color: white;
+}
+
+.containerFieldset {  
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    gap:1rem;
+}
+
+.containerEmailPass {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.containerEmail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .50rem;
+}
+
+.containerPassword {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .50rem;
+}
+
+.containerBtn {
+    display: flex;
+    gap: 2rem;
+}

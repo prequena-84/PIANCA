@@ -10,9 +10,8 @@ import HeroPanel from './components/heroBanner/welcome.panel';
 // importacion Formulario del Crud
 import FormCostumer from './components/costumer/form.costumer';
 
-
 // Importacion de Css componente App.
-import './App.css';
+import style from './App.module.css';
 
 function App() {
 
@@ -67,19 +66,17 @@ function App() {
 
   // Renderizado del jsx despues de cambios
   return (
-    <div>
-      {!isLogin && <div className="">
-        <div className="">
-          <HeroPanel/>
-        </div>
-        <div className="">
-          <Login
-            dataLogin={dataLogin}        // Estado reactivo de los datos del login que se pasan al componente hijo -> Login
-            handleChange={handlerChange}
-            onClear={clearForm}
-            onSubmit={sendDataLogin}
-          />
-        </div>
+    <div className={style.container}>
+      {!isLogin && <div className={style.containerHeroLogin}>
+            <HeroPanel/>
+          <div className={style.containerLogin}>
+            <Login
+              dataLogin={dataLogin}        // Estado reactivo de los datos del login que se pasan al componente hijo -> Login
+              handleChange={handlerChange}
+              onClear={clearForm}
+              onSubmit={sendDataLogin}
+            />
+          </div>
       </div>}
       {isLogin && <div>
         <FormCostumer />

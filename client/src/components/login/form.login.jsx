@@ -1,4 +1,6 @@
-//import React from "react";
+import React from "react";
+
+import style from "./form.login.module.css"
 
 // Componente de login
 const Login = ({ 
@@ -16,19 +18,19 @@ const Login = ({
     const { email, password } = dataLogin;
     
     return (
-        <form onSubmit={onSubmit} className="">
-            <fieldset className="">
-                <div className="">
-                    <div className="">
+        <form onSubmit={onSubmit} className={style.containerForm}>
+            <fieldset className={style.containerFieldset}>
+                <div className={style.containerEmailPass}>
+                    <div className={style.containerEmail}>
                         <label htmlFor="email">Correo Electronico</label>
-                        <input type="email" name="email" value={email} onChange={handleChange}/>
+                        <input type="email" name="email" value={email} onChange={handleChange} />
                     </div>
-                    <div className="">
+                    <div className={style.containerPassword}>
                         <label htmlFor="password">Contraseña</label>
                         <input type="password" name="password" value={password} onChange={handleChange}/>
                     </div>
                 </div>
-                <div className="">
+                <div className={style.containerBtn}>
                     <div className="">
                         <button type="submit" name="send" id="send" className="">
                             Ingresar

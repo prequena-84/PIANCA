@@ -2,5 +2,26 @@
 
 /* Variable de CSS */
 :root {
- 
+    --color-heroPanel: #eff6e0 ;
+    --color-login: #283618;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;       /* elimina márgenes */
+  padding: 0;      /* elimina relleno interno */
+  display: flex;   /* opcional, por si quieres layout flexible */
+  flex-direction: column; /* opcional */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
 }
